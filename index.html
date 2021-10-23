@@ -5,7 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/plans.css">
     <link rel="stylesheet" href="public/css/style.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"
           type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet"
@@ -20,6 +22,24 @@
 </head>
 <body>
 <div class="background"></div>
+<section class="registration" id="registration">
+    <div class="overlay"></div>
+    <div class="registerContainer">
+        <div class="r_navbar">
+            <img src="public/assets/images/leftArrow.png" alt="">
+            <div class="r_navText">Registration</div>
+            <div></div>
+        </div>
+        <div class="r_content">
+            <div class="r_name r_input"><span>Name :</span><input type="text"></div>
+            <div class="r_email r_input"><span>Email Id :</span><input type="text"></div>
+            <div class="r_city r_input"><span>City :</span><input type="text"></div>
+            <div class="r_mobile r_input"><span>Mobile :</span><input type="text"></div>
+        </div>
+        <div class="r_submit"><a href="">SUBMIT</a></div>
+    </div>
+</section>
+
 <section class="navbar">
     <div class="max-width">
         <div class="nav-logo">
@@ -29,7 +49,7 @@
         <ul>
             <li class="nav"><a href="">ABOUT US</a></li>
             <li class="nav"><a href="">HOW IT WORKS</a></li>
-            <li class="nav-btn"><a href="">REGISTER</a></li>
+            <li class="nav-btn register-btn"><a href="">REGISTER</a></li>
         </ul>
     </div>
 </section>
@@ -43,9 +63,9 @@
             <div class="h_sub_heading">India’s 1st AI based Nutrition app for every step from ideation to execution of
                 your healthy eating plans
             </div>
-            <div class="h_buttons">
+            <div class="h_buttons ">
                 <div class="h_knowMore"><a href="#aboutUs">KNOW MORE</a></div>
-                <div class="h_register"><a href="">
+                <div class="h_register register-btn"><a href="/plans.html">
                     <span> REGISTER</span>
                     for free </a>
                 </div>
@@ -54,6 +74,7 @@
     </div>
     <div class="h_video">
     </div>
+
 </section>
 <section class="aboutUs" id="aboutUs">
     <div class="max-width" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-sine"
@@ -251,7 +272,7 @@
          data-aos-once="false">
     <div class="max-width">
         <div class="f_head">Take first step towards <span> healthier & happier you</span></div>
-        <div class="f_register">
+        <div class="f_register register-btn">
             <a href="">
                 <span> REGISTER</span>
                 for free
@@ -269,6 +290,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
 <script crossorigin="anonymous"
         src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="public/js/script.js"></script>
 <script>
     AOS.init();
     $('.t_imageCarousel').owlCarousel({
