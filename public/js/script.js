@@ -6,4 +6,7 @@ $(document).ready(() => {
         $('#registration').css('display', 'none');
 
     }
+    $('.r_navbar img').click(() => {
+        $('#registration').css('display', 'none');
+    })
 });
