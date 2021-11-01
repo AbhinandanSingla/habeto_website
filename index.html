@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="public/css/plans.css">
     <link rel="stylesheet" href="public/css/style.css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet"
-          type="text/css"/>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <link
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             rel="stylesheet"
@@ -31,12 +32,39 @@
             <div></div>
         </div>
         <div class="r_content">
-            <div class="r_name r_input"><span>Name :</span><input type="text"></div>
-            <div class="r_email r_input"><span>Email Id :</span><input type="text"></div>
-            <div class="r_city r_input"><span>City :</span><input type="text"></div>
-            <div class="r_mobile r_input"><span>Mobile :</span><input type="text"></div>
+            <div class="r_name r_input"><span>Name :</span><label for="name"></label><input type="text" id="name"></div>
+            <div class="r_email r_input"><span>Email Id :</span><label for="email"></label><input type="email"
+                                                                                                  id="email"></div>
+            <div class="r_city r_input"><span>City :</span><label for="city"></label><input type="text" id="city"></div>
+            <div class="r_mobile r_input"><span>Mobile :</span><label for="mobile"></label><input type="number"
+                                                                                                  id="mobile"></div>
         </div>
-        <div class="r_submit"><a href="">SUBMIT</a></div>
+        <div class="r_submit"><a id="r_submit">SUBMIT</a></div>
+    </div>
+</section>
+<section class="questions" id="questions">
+    <div class="overlay"></div>
+    <div class="questionContainer" id="questionContainer">
+        <!--        <div class="q_navBar">-->
+        <!--            <img src="public/assets/images/leftArrow.png" alt="">-->
+        <!--            <div class="q_navText">QUESTION <span>1</span> OF 10</div>-->
+        <!--            <div></div>-->
+        <!--        </div>-->
+        <!--        <div class="q_heading">-->
+        <!--            What’s your health goal(s)?-->
+        <!--        </div>-->
+        <!--        <div class="q_sub_heading">You can select multiple options</div>-->
+        <!--        <div class="q_progressBar"></div>-->
+        <!--        <div class="q_answers">-->
+        <!--            <ul>-->
+        <!--                <li class="q_tab">Lose Weight</li>-->
+        <!--                <li class="q_tab">Stay Healthy</li>-->
+        <!--                <li class="q_tab">Gain Muscle</li>-->
+        <!--                <li class="q_tab">Manage Medical Condition</li>-->
+        <!--                <li class="q_tab">Improve Sports performance</li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <!--        <div class="q_next">Next</div>-->
     </div>
 </section>
 
@@ -50,7 +78,14 @@
             <li class="nav"><a href="">ABOUT US</a></li>
             <li class="nav"><a href="">HOW IT WORKS</a></li>
             <li class="nav-btn register-btn"><a href="">REGISTER</a></li>
+            <li class="mobile-btn"><img src="public/assets/images/menu.png" alt=""></li>
         </ul>
+        <div class="mobile-navbar" style="display: none;">
+            <a class="mobile_nav" href="">ABOUT US</a>
+            <hr>
+            <a class="mobile_nav" href="">HOW IT WORKS</a>
+            </ul>
+        </div>
     </div>
 </section>
 <section class="home">
@@ -117,20 +152,23 @@
             <div class="m2Sub">Know the reason behind every meal in your plan. Edit you Plan with intuitive add, delete
                 and swap recipes option
             </div>
+            <div class="m2Plan"><a href="">See Plans</a></div>
         </div>
     </div>
 </section>
 <section class="menu2">
     <div class="max-width">
-        <div class="m2Card2" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-sine"
+        <div class="m2Card2" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-sine"
              data-aos-once="false">
             <img src="public/assets/images/menu/m3.png" alt="" class="mediaImage">
             <div class="m2Heading">Automatic Grocery Management</div>
             <div class="m2Sub">Get auto generated grocery list according to your meal plan and get it delivered in
                 single click. Grocery Shopping Sorted!
             </div>
+            <div class="m2Plan"><a href="">See Plans</a></div>
+
         </div>
-        <div class="m3Card2" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-in-sine"
+        <div class="m3Card2" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-sine"
              data-aos-once="false" data-aos-delay="500">
             <img src="public/assets/images/menu/m4.png" alt="" class="mediaImage">
             <div class="m2Heading">Combined Household Planning</div>
@@ -178,7 +216,10 @@
             <div class="m2Sub">Get healthy & tasty recipes for every dish in your meal plan. Enjoy 1000+ recipes with a
                 healthy twist to each dish
             </div>
+            <div class="m2Plan"><a href="">See Plans</a></div>
+
         </div>
+
     </div>
 </section>
 <section class="solution">
@@ -189,7 +230,7 @@
                 <div class="quiz_heading">What’s the right solution
                     for you?
                 </div>
-                <div class="quizBtn"><a href="">TAKE QUIZ</a></div>
+                <div class="quizBtn"><a>TAKE QUIZ</a></div>
             </div>
         </div>
     </div>
@@ -197,79 +238,91 @@
 <section class="testimonies">
     <div class="max-width">
         <div class="t_head">This is why we do what we do</div>
-        <div class="t_imageCarousel owl-carousel owl-theme">
-            <div class="t_image t_image1">
-                <img src="public/assets/images/t_images/t1.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
-                    </div>
-                </div>
-            </div>
-            <div class="t_image t_image2"><img src="public/assets/images/t_images/t2.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
+        <div class="t_imageCarousel swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide t_image t_image1">
+                    <img src="public/assets/images/t_images/t1.png" alt="">
+                    <div class="t_imageContent">
+                        <div class="t_topText">
+                            Get balanced meal plans customised for your lifestyles & goals. Designed by experts,
+                            powered by
+                            AI, free of cost!
+                        </div>
+                        <div class="t_bottomText">SHAUNAK,26
+                            <br> TEACHER
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="t_image t_image3"><img src="public/assets/images/t_images/t3.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
-                    </div>
-                </div>
-            </div>
-            <div class="t_image t_image4"><img src="public/assets/images/t_images/t1.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
+                <div class="swiper-slide t_image t_image1">
+                    <img src="public/assets/images/t_images/t1.png" alt="">
+                    <div class="t_imageContent">
+                        <div class="t_topText">
+                            Get balanced meal plans customised for your lifestyles & goals. Designed by experts,
+                            powered by
+                            AI, free of cost!
+                        </div>
+                        <div class="t_bottomText">SHAUNAK,26
+                            <br> TEACHER
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="t_image t_image5"><img src="public/assets/images/t_images/t2.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
-                    </div>
-                </div>
-            </div>
-            <div class="t_image t_image6"><img src="public/assets/images/t_images/t3.png" alt="">
-                <div class="t_imageContent">
-                    <div class="t_topText">
-                        Get balanced meal plans customised for your lifestyles & goals. Designed by experts, powered by
-                        AI, free of cost!
-                    </div>
-                    <div class="t_bottomText">SHAUNAK,26
-                        <br> TEACHER
+                <div class="swiper-slide t_image t_image1">
+                    <img src="public/assets/images/t_images/t1.png" alt="">
+                    <div class="t_imageContent">
+                        <div class="t_topText">
+                            Get balanced meal plans customised for your lifestyles & goals. Designed by experts,
+                            powered by
+                            AI, free of cost!
+                        </div>
+                        <div class="t_bottomText">SHAUNAK,26
+                            <br> TEACHER
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-slide t_image t_image1">
+                    <img src="public/assets/images/t_images/t1.png" alt="">
+                    <div class="t_imageContent">
+                        <div class="t_topText">
+                            Get balanced meal plans customised for your lifestyles & goals. Designed by experts,
+                            powered by
+                            AI, free of cost!
+                        </div>
+                        <div class="t_bottomText">SHAUNAK,26
+                            <br> TEACHER
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <div class="swiper-arrowBox">
+                <div class="swiper-buttonPrev">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.3535 27.8125L11.6016 20L19.3535 12.1875" stroke="black" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.6787 20H28.3984" stroke="black" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                        <path d="M38.75 20C38.75 9.64844 30.3516 1.25 20 1.25C9.64844 1.25 1.25 9.64844 1.25 20C1.25 30.3516 9.64844 38.75 20 38.75C30.3516 38.75 38.75 30.3516 38.75 20Z"
+                              stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+                <div class="swiper-buttonNext">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.6465 27.8125L28.3984 20L20.6465 12.1875" stroke="black" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M27.3213 20H11.6016" stroke="black" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                        <path d="M1.25 20C1.25 9.64844 9.64844 1.25 20 1.25C30.3516 1.25 38.75 9.64844 38.75 20C38.75 30.3516 30.3516 38.75 20 38.75C9.64844 38.75 1.25 30.3516 1.25 20Z"
+                              stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 <section class="footer" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-sine"
-         data-aos-once="false">
+         data-aos-once="true">
     <div class="max-width">
         <div class="f_head">Take first step towards <span> healthier & happier you</span></div>
         <div class="f_register register-btn">
@@ -283,44 +336,30 @@
         <div class="f_contact">Contact us at care@habeato.in</div>
     </div>
 </section>
-<script crossorigin="anonymous"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script crossorigin="anonymous"
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-<script crossorigin="anonymous"
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="public/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     AOS.init();
-    $('.t_imageCarousel').owlCarousel({
-        loop: true,
-        rewind: false,
-        stagePadding: 0,
-        center: true,
-        checkVisibility: true,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        items: 3,
-        dots: false,
-        margin: 30,
 
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 3,
-            },
-            1024: {
-                items: 3,
-            },
-            1440: {
-                items: 3,
-            }
-        }
-    })
 </script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        cardsEffect: {
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.swiper-buttonNext',
+            prevEl: '.swiper-buttonPrev',
+        },
+        initialSlide: 1
+    });
+</script>
+
+<script src="public/js/script.js"></script>
+<script type="module" defer src="server/server.js"></script>
+
 </body>
 </html>

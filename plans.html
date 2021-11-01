@@ -40,7 +40,7 @@
                     </ul>
                 </div>
                 <div class="planRates">
-                    <a href="index.html?register=true">Sign Up</a>
+                    <a data-id='free' class="planRatesLink">Sign Up</a>
                     <div class="p_rate">For Free</div>
                 </div>
             </div>
@@ -53,8 +53,6 @@
                     <div class="plan_head">All features of the <span>Free plan <br><br><span>+</span>  </span>
                     </div>
                     <ul>
-
-
                         <li class="p_benefits"> Automatic grocery list generation with editing options</li>
                         <li class="p_benefits"> Free grocery delivery upto 2 times a week</li>
                         <li class="p_benefits"> Merge meal plan with friends/family for combined household grocery list
@@ -64,7 +62,7 @@
                     </ul>
                 </div>
                 <div class="planRates">
-                    <a href="index.html?register=true">Sign Up</a>
+                    <a data-id='99' class="planRatesLink">Sign Up</a>
                     <div class="p_rate p_paid"><span>₹ 99 </span>/ month</div>
                 </div>
             </div>
@@ -92,8 +90,8 @@
 
                 </div>
                 <div class="planRates">
-                    <a href="index.html?register=true">Sign Up</a>
-                    <div class="p_rate p_paid "><span>₹ 199 </span>/ month</div>
+                    <a data-id='199' class="planRatesLink">Sign Up</a>
+                    <div class="p_rate p_paid " data-id='199'><span>₹ 199 </span>/ month</div>
                 </div>
             </div>
             <div class="plansBox plan4"><img src="" alt="">
@@ -116,8 +114,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="planRates ">
-                    <a href="index.html?register=true">Sign Up</a>
+                <div class="planRates">
+                    <a data-id='1999' class="planRatesLink">Sign Up</a>
                     <div class="p_rate p_paid">From <span>₹ 1999 </span>/ month per person</div>
                 </div>
             </div>
@@ -125,5 +123,12 @@
         </div>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $('.planRatesLink').click(function () {
+        let plan = $(this).data('id')
+        sessionStorage.setItem('plan', plan)
+        window.location.href = "/?register=true";
+    })</script>
 </body>
 </html>
