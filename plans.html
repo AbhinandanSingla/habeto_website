@@ -121,26 +121,26 @@
 
         </div>
         <div class="mobilePlanContainer">
-            <div class="div1 center"><img src="public/assets/images/plans/p1.png" alt="">
+            <div class="div1 center " id="free"><img src="public/assets/images/plans/p1.png" alt="">
                 <div class="m_plan">
                     <div class="m_heading">Free</div>
                 </div>
             </div>
-            <div class="div2 center"><img src="public/assets/images/plans/p1.png" alt="">
+            <div class="div2 center " id="basic"><img src="public/assets/images/plans/p4.png" alt="">
                 <div class="m_plan">
                     <div class="m_heading">Basic</div>
                     <div class="m_sub"><span>₹ 99</span></div>
                     <div class="m_last">per month</div>
                 </div>
             </div>
-            <div class="div3 center"><img src="public/assets/images/plans/p1.png" alt="">
+            <div class="div3 center " id="pro"><img src="public/assets/images/plans/p3.png" alt="">
                 <div class="m_plan">
                     <div class="m_heading">Pro</div>
                     <div class="m_sub"><span>₹ 199</span></div>
                     <div class="m_last">per month</div>
                 </div>
             </div>
-            <div class="div4 center"><img src="public/assets/images/plans/p1.png" alt="">
+            <div class="div4 center " id="premium"><img src="public/assets/images/plans/p2.png" alt="">
                 <div class="m_plan">
                     <div class="m_heading">Premium</div>
                     <div class="m_sub"><span>₹ 1999</span></div>
@@ -185,12 +185,69 @@
         </div>
     </div>
 </section>
+<section class="planBottom">
+    <div class="max-width">
+        <div class="content1 mcontent">Merge meal plans of household &
+            <span> </span> get automatic grocery list for household
+        </div>
+        <div class="content2 mcontent">Grocery Delivery
+            <span></span> (upto 2 times a week)
+        </div>
+        <div class="content3 mcontent">Smart Cooking guide with 1000+ recipes
+            <span> </span> sharable with you cook in regional language
+        </div>
+        <div class="content4 mcontent">Get out Trained Cooks for preparing
+            <span> </span> healthy meals at your home
+        </div>
+        <div class="mplanButton"><a href="/register?=true">Get This</a></div>
+    </div>
+</section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $('.planRatesLink').click(function () {
         let plan = $(this).data('id')
         sessionStorage.setItem('plan', plan)
         window.location.href = "/?register=true";
-    })</script>
+    });
+
+
+    $('.m_plan').click(function () {
+        $('.m_plan').css({
+            'background': '#EDFCFC',
+        })
+        $('.m_heading').css({
+            color: '#34A0A4'
+
+        })
+        $('.m_sub').css({
+            color: '#34A0A4'
+        })
+
+        $('.m_last').css({
+            color: '#34A0A4'
+        })
+        $(this).css({
+            'background': '#34A0A4',
+            'box-shadow': '0px 0px 10px rgba(52, 160, 164, 0.7)',
+        })
+        $(this).find('.m_heading').css({
+            color: '#FFFFFF'
+        })
+
+        $(this).find('.m_sub').css({
+            color: '#FFFFFF'
+        })
+
+        $(this).find('.m_last').css({
+            color: '#FFFFFF'
+        })
+
+        let plan = $(this).data('id')
+        sessionStorage.setItem('plan', plan)
+    });
+
+</script>
+
+
 </body>
 </html>
