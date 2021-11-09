@@ -1,6 +1,6 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
-import {getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import {getFirestore, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCyQ0w52fukK9pFZwFGi0hjJC3Bmtd7jII",
@@ -35,6 +35,11 @@ function isEmail(email) {
 
 async function addUser(id, data) {
     await setDoc(doc(db, 'users', id), data);
+    let snap = await getDoc(doc(db, 'uCount', 'uCount'))
+    let increment = snap.data()['uCount'] + 1;
+    await setDoc(doc(db, 'uCount', 'uCount'), {'uCount': increment});
+    sessionStorage.setItem('reg', increment)
+    console.log(increment)
 }
 
 $(document).ready(() => {
@@ -55,6 +60,7 @@ $(document).ready(() => {
                         plan: sessionStorage.getItem('plan')
                     }).then(r => {
                         alert('Registered Successfully');
+                        window.location.href = `/sucessPage.html`;
                         $('#registration').css('display', 'none');
                         $('.nav-btn').css('display', 'none');
                     })

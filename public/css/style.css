@@ -109,11 +109,17 @@ html {
     height: 100vh;
     display: flex;
     position: relative;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .home .max-width .content {
-    margin: auto 4rem;
+    margin: auto 0;
     width: 50%;
+}
+
+.h_video img {
+    width: 280px;
 }
 
 .h_main_heading {
@@ -134,6 +140,10 @@ html {
     line-height: 50px;
     margin-bottom: 8rem;
 
+}
+
+.h_sub_heading span {
+    display: block;
 }
 
 .h_buttons {
@@ -181,6 +191,7 @@ html {
     margin-left: 4rem;
     font-weight: 400;
     transition: all 200ms ease-in-out;
+    font-size: 14px;
 }
 
 .h_register span {
@@ -205,7 +216,6 @@ html {
 
 .aboutUs .max-width {
     width: 100%;
-    height: 90vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -235,12 +245,23 @@ html {
     color: rgba(0, 0, 0, 0.7);
 }
 
+.a_sub span {
+    display: block;
+}
+
 .a_last {
     font-family: var(--family2);
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 49px;
+    text-align: center;
+}
+
+.menu1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .a_mLine {
@@ -259,14 +280,19 @@ html {
 
 .menu1 .max-width, .menu2 .max-width, .menu3 .max-width {
     width: 100%;
-    height: 80vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr repeat(2, 3fr);
     grid-template-rows: 1fr;
     grid-column-gap: 50px;
     grid-row-gap: 0px;
-    padding: 0 6rem;
+    padding: 6rem 3rem;
+    margin: 3rem 0;
     align-items: center;
+}
+
+.menu2 .max-width {
+    grid-template-columns:  repeat(2, 3fr) 2fr;
+
 }
 
 .m1Card {
@@ -277,20 +303,32 @@ html {
 }
 
 .m2Card {
+    display: grid;
+    justify-items: center;
+
     grid-area: 1 / 2 / 2 / 3;
 }
 
 .m3Card {
     grid-area: 1 / 3 / 2 / 4;
+    display: grid;
+    justify-items: center;
+
 }
 
 .m2Card2 {
 
     grid-area: 1 / 1 / 2 / 2;
+    display: grid;
+    justify-items: center;
+
 }
 
 .m3Card2 {
     grid-area: 1 / 2 / 2 / 3;
+    display: grid;
+    justify-items: center;
+
 }
 
 .m1Card2 {
@@ -311,6 +349,11 @@ html {
     font-size: 60px;
     line-height: 70px;
     color: #2E3054;
+    text-align: center;
+}
+
+.m1Heading span {
+    display: block;
 }
 
 .m1Sub {
@@ -325,6 +368,10 @@ html {
 
 }
 
+.m1Sub span {
+    display: block;
+}
+
 .m1Plan a {
     position: relative;
     background: #34A0A4;
@@ -333,7 +380,7 @@ html {
     border-radius: 30px;
     width: 20rem;
     border: 2px var(--main-color) solid;
-    padding: 1rem 4rem;
+    padding: 1.2rem 6rem;
     color: white;
     font-style: normal;
     font-weight: 500;
@@ -357,6 +404,11 @@ html {
     font-size: 26px;
     line-height: 50px;
     padding: 2rem 0;
+    text-align: center;
+}
+
+.m2Heading span {
+    display: block;
 }
 
 .m2Sub {
@@ -365,12 +417,13 @@ html {
     font-weight: normal;
     font-size: 22px;
     line-height: 40px;
+    text-align: center;
 }
 
 /*  Quiz Solution   */
 .solution .max-width {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -378,18 +431,20 @@ html {
 
 .quizR {
 
-    width: 50%;
-    height: 30vh;
+    width: 60%;
+    height: 45vh;
     display: flex;
-    align-items: end;
     justify-content: space-around;
     background: #FCF8ED;
     border-radius: 40px;
+    position: relative;
 }
 
 .quizR img {
-    height: 28vh;
-    width: 10rem;
+    position: relative;
+    bottom: 0;
+    height: available;
+    width: 15rem;
 }
 
 .quizContent {
@@ -397,14 +452,13 @@ html {
 }
 
 .quiz_heading {
-    display: inline-block;
     width: 50rem;
     font-family: var(--family1);
     font-style: normal;
     font-weight: bold;
     font-size: 46px;
     line-height: 54px;
-    padding-bottom: 4rem;
+    padding: 4rem 0;
 }
 
 .quizBtn a {
@@ -420,7 +474,10 @@ html {
     font-weight: 600;
     font-size: 20px;
     line-height: 23px;
-    position: relative;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .quizBtn a:hover {
@@ -440,7 +497,7 @@ html {
 .testimonies {
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: rgba(252, 248, 237, 0.6);
 }
 
@@ -449,7 +506,7 @@ html {
     text-align: center;
     color: #F98500;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -465,7 +522,7 @@ html {
 }
 
 .t_image img {
-    width: 40%;
+    width: 60rem;
     height: auto;
 }
 
@@ -545,22 +602,25 @@ html {
     display: inline-flex;
     flex-direction: column;
     padding: 0.8rem 5rem;
-    background: #34A0A4;
-    border: 2px solid #34A0A4;
+    border: 2px solid #F98500;
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px 2px rgba(52, 160, 164, 0.8);
+
+    background: #F98500;
+    box-shadow: 0px 4px 10px 2px rgba(249, 133, 0, 0.8);
     border-radius: 30px;
     color: white;
     font-family: var(--family3);
     text-align: center;
     font-weight: 400;
     transition: all 300ms ease-in-out;
+    font-size: 14px;
 
 }
 
 .f_register a:hover {
     top: -0.4rem;
-    box-shadow: 0px 6px 20px 2px rgba(52, 160, 164, 0.8);
+
+    box-shadow: 0px 4px 10px 2px rgba(249, 133, 0, 0.8);
 
 }
 
@@ -812,6 +872,22 @@ html {
     line-height: 33px;
 }
 
+.q_tabInput {
+    padding: 3rem 0 20rem 0;
+}
+
+.q_tabInput input {
+    width: 173px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    font-family: var(--family2);
+}
+
+.Mh_video {
+    display: none
+}
+
 @media (max-width: 1024px) {
 
     .nav-logo {
@@ -823,35 +899,30 @@ html {
     }
 
     .home .max-width .content {
-        width: 70%;
+        width: 50%;
     }
 
     .h_main_heading {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .h_sub_heading {
-        font-size: 30px;
+        font-size: 24px;
     }
 
 
     .h_knowMore a {
-        padding: 1rem 3rem;
+        padding: 1.5rem 5rem;
         font-size: 16px;
 
     }
 
     .h_register a {
-        padding: 0.5rem 4rem;
+        padding: 0.5rem 6rem;
     }
 
     .h_register span {
         font-size: 16px;
-    }
-
-    /* aboutus */
-    .aboutUs .max-width {
-        height: 100vh;
     }
 
     .a_main_heading {
@@ -859,6 +930,7 @@ html {
     }
 
     .a_sub {
+        width: 100%;
         font-size: 30px;
         padding-top: 5rem;
         padding-bottom: 5rem;
@@ -874,11 +946,17 @@ html {
     }
 
     .m1Heading {
-        font-size: 55px;
+        font-size: 48px;
+        line-height: 60px;
     }
 
     .m1Sub {
         font-size: 25px;
+        line-height: 45px;
+    }
+
+    .m1Sub span {
+        display: inline;
     }
 
     .m1Plan a {
@@ -887,6 +965,7 @@ html {
 
     .m2Heading {
         font-size: 24px;
+        line-height: 40px;
     }
 
     .m2Sub {
@@ -969,7 +1048,18 @@ html {
 }
 
 @media (max-width: 900px) {
+    .h_main_heading {
+        font-size: 32px;
+        line-height: 50px;
+    }
 
+    .h_sub_heading {
+        font-size: 20px;
+    }
+
+    .h_knowMore a {
+        padding: 1.5rem 1.5rem;
+    }
 
     .registerContainer {
         width: 500px;
@@ -1045,6 +1135,10 @@ html {
     .t_imageContent {
         width: 52%;
     }
+
+    .menu1 .max-width, .menu2 .max-width, .menu3 .max-width {
+        grid-template-columns: 3fr repeat(2, 3fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1089,8 +1183,28 @@ html {
         color: #000;
     }
 
+    .home .max-width {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .h_video {
+        display: none;
+    }
+
+    .Mh_video {
+        display: block;
+        padding: 3rem;
+    }
+
+    .Mh_video img {
+        width: 30rem;
+        height: 20rem;
+
+    }
+
     .home .max-width .content {
-        margin: auto 2rem;
+        margin: 6rem 2rem;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -1104,6 +1218,7 @@ html {
     .h_sub_heading {
         font-size: 30px;
         text-align: center;
+        margin-bottom: 0rem;
     }
 
     /* about us */
@@ -1135,7 +1250,7 @@ html {
         grid-template-columns: 1fr;
         grid-template-rows: 0fr 0fr 0fr;
         grid-column-gap: 0px;
-        grid-row-gap: 10px;
+        grid-row-gap: 50px;
         height: auto;
         padding: 2rem 3rem;
 
@@ -1145,7 +1260,7 @@ html {
         grid-template-columns: 1fr;
         grid-template-rows: 0fr 0fr 0fr;
         grid-column-gap: 0px;
-        grid-row-gap: 10px;
+        grid-row-gap: 60px;
         height: auto;
         padding: 2rem 3rem;
 
@@ -1198,6 +1313,14 @@ html {
     .m2Plan {
         display: flex;
         justify-content: center;
+    }
+
+    .m1Heading span {
+        display: inline;
+    }
+
+    .m2Heading {
+        display: inline;
     }
 
     .m2Sub {
@@ -1410,12 +1533,20 @@ html {
 
     .h_knowMore a {
         font-size: 14px;
+        padding: 1.5rem 4.5rem;
     }
 
     .quiz_heading {
         font-size: 25px;
         line-height: 30px;
         padding: 2rem 0;
+    }
+
+    .quizBtn a {
+        position: relative;
+        top: -30px;
+        left: 0;
+        transform: none;
     }
 
     .t_head {
@@ -1446,6 +1577,37 @@ html {
 }
 
 @media (max-width: 480px) {
+    .background {
+        background: url(../assets/images/MHomeBackground.png);
+        height: 82vh;
+        background-size: 100% 82vh;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
+    .quizR {
+        height: 30vh;
+        width: 90%;
+    }
+
+    .m1Heading span {
+        display: inline;
+    }
+
+    .quizR img {
+        height: 24rem;
+        width: 10rem;
+    }
+
+    .testimonies .max-width {
+        top: 60%;
+    }
+
+    .solution .max-width {
+        height: 65vh;
+        align-items: end;
+    }
+
     .q_heading {
         font-size: 17px;
     }
@@ -1512,7 +1674,17 @@ html {
     .h_sub_heading {
         font-size: 16px;
         line-height: 25px;
-        margin-bottom: 6rem;
+        margin-bottom: 0rem;
+        padding: 0 2rem;
+    }
+
+    .menu2 .max-width {
+        padding: 2rem 1rem;
+    }
+
+    .Mh_video {
+        display: block;
+        padding: 3rem 0;
     }
 
     .h_buttons {
@@ -1572,6 +1744,13 @@ html {
         padding: 1.5rem 0 1rem 0;
     }
 
+    .m2Heading span {
+        display: inline;
+    }
+
+    .m1Heading span {
+        display: inline;
+    }
 
     /*.f_head {*/
     /*    font-size: 35px;*/
@@ -1610,8 +1789,16 @@ html {
     }
 
     .testimonies {
-        height: 40vh;
-        width: 95%;
+        /*height: 40vh;*/
+        width: 100%;
+    }
+
+    .t_image img {
+        width: 24rem;
+    }
+
+    .t_imageContent {
+        width: 60%;
     }
 
     .footer .max-width img {

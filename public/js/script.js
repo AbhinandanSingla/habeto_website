@@ -91,6 +91,25 @@ let questions = [
             'Female',
             'Non - Binary'],
         'button': 'NEXT', 'choice': 'single', 'attempt': 'no'
+    }, {
+        'heading': "What’s your age?",
+        'subheading': '',
+        'answers': ['input'],
+        'button': 'NEXT', 'choice': 'single', 'attempt': 'no'
+    }, {
+        'heading': "Where do you live currently?",
+        'subheading': '',
+        'answers': ['Delhi NCR',
+            'Mumbai',
+            'Bangalore',
+            'Pune',
+            'Chennai',
+            'Kolkata',
+            'Jaipur',
+            'Hyderabad',
+            'Chandigarh',
+            'Others'],
+        'button': 'NEXT', 'choice': 'single', 'attempt': 'no'
     },
 ]
 
@@ -125,7 +144,16 @@ function addQuestion(index) {
         <div class="q_answers">
             <ul>
             ${questions[index]['answers'].map(
-        (val, index) => {
+        (val, vindex) => {
+            if (questions[index]['answers'].length > 10) {
+                console.log('we reached')
+                $('.q_answers ul').css({'display': 'grid', 'grid-template-columns': '1fr 1fr'})
+            } else {
+                $('.q_answers ul').css({'display': 'block'})
+            }
+            if (val === 'input') {
+                return `<li class="q_tabInput"><input type="text"></li>`
+            }
             return `<li class="q_tab">${val}</li>`
         }
     ).join('')}
@@ -162,7 +190,6 @@ $(document).ready(function () {
             $('.q_next').css({'background': '#34A0A4', 'color': 'white'})
         }
     })
-
     $(document).on('click', '.q_next', function () {
         if (questions[questionNumber - 1].attempt === 'yes') {
             if (questionNumber < questions.length) {
@@ -173,20 +200,26 @@ $(document).ready(function () {
             }
 
         } else {
-            if (singleAns.length === 0) {
-                alert('Please select a option')
+            if (questions[questionNumber - 1].answers.indexOf('input') > -1) {
+                singleAns.push($('.q_tabInput input').val())
+                singleAns.splice(0, singleAns.length)
+                progressBar('+')
+                addQuestion(questionNumber)
+                questionNumber += 1
             } else {
-                if (questionNumber < questions.length) {
-                    singleAns.splice(0, singleAns.length)
-                    progressBar('+')
-                    addQuestion(questionNumber)
-                    questionNumber += 1
-                }
-                if (questions[questionNumber].attempt === 'yes') {
-
+                if (singleAns.length === 0) {
+                    alert('Please select a option')
+                } else {
+                    if (questionNumber < questions.length) {
+                        singleAns.splice(0, singleAns.length)
+                        progressBar('+')
+                        addQuestion(questionNumber)
+                        questionNumber += 1
+                    }
+                    if (questions[questionNumber].attempt === 'yes') {
+                    }
                 }
             }
-
         }
 
     })

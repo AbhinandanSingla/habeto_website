@@ -47,7 +47,7 @@
             Thank you for registering !
         </div>
         <div class="sub_head">
-            You are at wailist number <span>201</span>
+            You are at waitlist number <span id="r_number">201</span>
         </div>
         <img src="public/assets/images/error.png" alt="">
         <div class="content">Due to overwhelming number of registrations, we have reserved your spot on waitlist.
@@ -69,6 +69,10 @@
 <script src="public/js/script.js"></script>
 <script>
     AOS.init();
+</script>
+<script>
+    let rnumber = sessionStorage.getItem('reg');
+    $('#r_number').text(rnumber);
 </script>
 </body>
 </html>
