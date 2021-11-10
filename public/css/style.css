@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
 /*font-family: 'Open Sans', sans-serif;*/
 /*font-family: 'Roboto', sans-serif;*/
 /*font-family: 'Work Sans', sans-serif;*/
@@ -285,7 +285,7 @@ html {
     grid-column-gap: 50px;
     grid-row-gap: 0px;
     padding: 6rem 3rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
     align-items: center;
 }
 
@@ -1587,6 +1587,7 @@ html {
     .quizR {
         height: 30vh;
         width: 90%;
+        top: -10%;
     }
 
     .m1Heading span {
@@ -1601,10 +1602,18 @@ html {
     .testimonies .max-width {
         top: 60%;
     }
+    .quiz_heading {
+        padding: 2rem 30px;
+        margin-bottom: 1rem;
+    }
+    .f_head span {
+        display: block;
+    }
 
     .solution .max-width {
-        height: 65vh;
+        height: 55vh;
         align-items: end;
+        margin-top: 8rem;
     }
 
     .q_heading {
@@ -1737,14 +1746,30 @@ html {
         padding: 0;
     }
 
+    .m1Sub span {
+        display: block;
+    }
+
     .m1Sub {
         font-size: 17px;
         line-height: 25px;
-        padding: 1.5rem 0 1rem 0;
+        padding: 0.5rem 0 1rem 0;
+    }
+
+    .menu1 .max-width, .menu3 .max-width, .menu2 .max-width {
+        grid-row-gap: 20px;
     }
 
     .m2Heading span {
         display: inline;
+    }
+
+    .a_sub span {
+        display: inline;
+    }
+
+    .mediaImage {
+        width: 45%;
     }
 
     .m1Heading span {
@@ -1781,10 +1806,6 @@ html {
     .quizBtn a {
         font-size: 14px;
         line-height: 16px;
-    }
-
-    .solution .max-width {
-        /*height: 90vh;*/
     }
 
     .testimonies {
@@ -1859,5 +1880,11 @@ html {
     .r_submit {
         font-size: 16px;
         line-height: 19px;
+    }
+}
+
+@media (max-width: 1255px) {
+    .m1Sub {
+        /*font-size: 25px;*/
     }
 }

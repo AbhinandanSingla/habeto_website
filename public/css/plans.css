@@ -215,14 +215,20 @@
     .plans .max-width .planContainer {
         display: none;
     }
-.planCenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+    .planCenter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .center img {
         width: 2rem;
+    }
+
+    .planBottom {
+        display: block;
     }
 
     .mobilePlanContainer {
