@@ -1545,6 +1545,7 @@ html {
 
     .aboutUs .max-width {
         height: auto;
+        padding: 4rem 0;
     }
 
     .quiz_heading {
