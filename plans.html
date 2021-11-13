@@ -215,6 +215,10 @@
             <div class="div48 center planeLine"><img src="public/assets/images/arrowBox/cross.png" alt=""></div>
             <div class="div49 center "><img src="public/assets/images/arrowBox/tick.png" alt=""></div>
             <div class="div50 center">
+            </div>
+            <div class="div50 center">
+            </div>
+            <div class="div51">
                 <div class="mplanButton"><a href="/register?=true">Get This</a></div>
             </div>
         </div>
@@ -244,6 +248,24 @@
         sessionStorage.setItem('plan', plan)
         window.location.href = "/?register=true";
     });
+
+    $('.m_plan:first').css({
+        'background': '#34A0A4',
+        'box-shadow': '0px 0px 10px rgba(52, 160, 164, 0.7)',
+    }).find('.m_heading').css({
+        color: '#FFFFFF'
+    })
+    // $('.m_plan:first').find('.m_heading').css({
+    //     color: '#FFFFFF'
+    // })
+
+    $('.m_plan:first').find('.m_sub').css({
+        color: '#FFFFFF'
+    })
+
+    $('.m_plan:first').find('.m_last').css({
+        color: '#FFFFFF'
+    })
 
 
     $('.m_plan').click(function () {

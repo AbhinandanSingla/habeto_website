@@ -232,10 +232,11 @@
     }
 
     .mobilePlanContainer {
+        position: relative;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 3fr repeat(18, 1fr);
+        grid-template-rows: 3fr repeat(20, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
@@ -513,6 +514,23 @@
     .div50 {
         grid-area: 20 / 1 / 21 / 5;
 
+    }
+
+    .div51 {
+        grid-area: 21 / 1 / 22 / 5;
+
+    }
+
+    .div51 {
+        position: fixed;
+        bottom: 0;
+        background: white;
+        width: 100%;
+    }
+
+    .mplanButton {
+        display: flex;
+        justify-content: center;
     }
 
     .plan_heading {
