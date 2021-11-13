@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
 /*font-family: 'Open Sans', sans-serif;*/
 /*font-family: 'Roboto', sans-serif;*/
 /*font-family: 'Work Sans', sans-serif;*/
@@ -60,9 +60,11 @@ html {
     color: var(--main-color);
     transition: all 300ms ease-in-out;
 }
+
 .solution .mobile-width {
     display: none;
 }
+
 .nav a:hover {
     border-bottom: 2px var(--main-color) solid;
 }
@@ -370,7 +372,6 @@ html {
     text-align: center;
     color: #000000;
     padding: 2rem 0 4rem 0;
-
 }
 
 .m1Sub span {
@@ -428,28 +429,30 @@ html {
 /*  Quiz Solution   */
 .solution .max-width {
     width: 100%;
-    height: 80vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .quizR {
-
-    width: 60%;
-    height: 45vh;
+    width: 90rem;
     display: flex;
     justify-content: space-around;
     background: #FCF8ED;
     border-radius: 40px;
     position: relative;
+    margin-bottom: 10rem;
+
+    margin-top: 3rem;
 }
 
 .quizR img {
     position: relative;
     bottom: 0;
     height: available;
-    width: 15rem;
+    width: 13rem;
 }
 
 .quizContent {
@@ -500,6 +503,8 @@ html {
 }
 
 .testimonies {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
     /*height: 100vh;*/
@@ -878,8 +883,11 @@ html {
 }
 
 .q_tabInput {
-    border: 2px solid black;
     padding: 3rem 0 20rem 0;
+}
+.q_tabInput input{
+    border: 1px solid #BEC8C8;
+
 }
 
 .gridView {
@@ -996,9 +1004,6 @@ html {
         line-height: 60px;
     }
 
-    .solution .max-width {
-        height: 50vh;
-    }
 
     .testimonies {
         /*height: 75vh;*/
@@ -1384,6 +1389,7 @@ html {
 
     .m2Sub {
         font-size: 18px;
+        padding: 0 5rem;
     }
 
     .m2Plan a {
@@ -1416,7 +1422,7 @@ html {
     }
 
     .mediaImage {
-        width: 65%;
+        width: 30rem;
     }
 
     .quizR {
@@ -1427,7 +1433,8 @@ html {
 
     .quiz_heading {
         font-size: 30px;
-        width: 20rem;
+        width: 80%;
+        line-height: 43px;
     }
 
     .quizR img {
@@ -1435,6 +1442,12 @@ html {
         /*bottom: 0;*/
         /*height: available;*/
         width: 10rem;
+        margin-left: 3rem;
+    }
+
+    .quizContent {
+        display: flex;
+        justify-content: space-around;
     }
 
     .quizBtn a {
@@ -1455,7 +1468,8 @@ html {
     }
 
     .testimonies {
-        /*height: 55vh;*/
+        display: flex;
+        justify-content: center;
     }
 
     .t_topText {
@@ -1473,7 +1487,7 @@ html {
     }
 
     .testimonies .max-width {
-        height: 75vh;
+        height: auto;
     }
 }
 
@@ -1644,7 +1658,6 @@ html {
     .testimonies .max-width {
         height: auto;
     }
-
 
 
 }
@@ -1897,6 +1910,7 @@ html {
     .m2Sub {
         font-size: 15px;
         line-height: 24px;
+        padding: 0 0;
     }
 
     .m2Plan a {

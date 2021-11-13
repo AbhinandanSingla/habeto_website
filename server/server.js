@@ -33,6 +33,13 @@ function isEmail(email) {
     return regex.test(email);
 }
 
+function encryptMail(mail) {
+    const d = new Date();
+    let time = d.getTime();
+    mail = mail.replace(/[^\w\s]/gi, '').replace('gmailcom', '');
+    return `${mail}${time}`
+}
+
 async function addUser(id, data) {
     await setDoc(doc(db, 'users', id), data);
     let snap = await getDoc(doc(db, 'uCount', 'uCount'))
@@ -52,7 +59,7 @@ $(document).ready(() => {
         if (isEmail(email)) {
             if (name !== '') {
                 if (city !== '') {
-                    addUser('alphabetagama', {
+                    addUser(encryptMail(email), {
                         email: email,
                         name: name,
                         city: city,
