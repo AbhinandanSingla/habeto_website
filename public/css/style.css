@@ -71,7 +71,7 @@ html {
 }
 
 .nav-logo {
-    display: flex;
+    display: contents;
     align-items: end;
     font-family: var(--family2);
     font-weight: 600;
@@ -82,7 +82,6 @@ html {
 
 .nav-logo img {
     padding-left: 2rem;
-    width: 7rem;
 }
 
 .mobile-navbar {
@@ -102,6 +101,11 @@ html {
     width: 100%;
     height: 100vh;
     z-index: -1;
+}
+
+.background svg {
+    width: 100%;
+    height: 80vh;
 }
 
 .home .max-width {
@@ -872,7 +876,48 @@ html {
 }
 
 .q_tabInput {
+    border: 2px solid black;
     padding: 3rem 0 20rem 0;
+}
+
+.gridView {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.q_tab1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.q_tab2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.q_tab3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.q_tab4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.q_tab5 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.q_tab6 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.q_tab7 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.q_tab8 {
+    grid-area: 4 / 2 / 5 / 3;
 }
 
 .q_tabInput input {
@@ -941,13 +986,22 @@ html {
 
     /*    media 1*/
     .menu1 .max-width, .menu2 .max-width, .menu3 .max-width {
-        height: 100vh;
+        height: auto;
     }
 
     .m1Heading {
         font-size: 48px;
         line-height: 60px;
     }
+
+    .solution .max-width {
+        height: 50vh;
+    }
+
+    .testimonies {
+        height: 75vh;
+    }
+
 
     .m1Sub {
         font-size: 25px;
@@ -1044,6 +1098,9 @@ html {
         font-size: 26px;
     }
 
+    .quizR {
+        height: auto;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1106,6 +1163,7 @@ html {
         font-size: 23px;
         line-height: 26px;
     }
+
 
     .q_tab {
         height: 65px;
@@ -1360,13 +1418,21 @@ html {
     }
 
     .quizR {
-        flex-direction: column;
+        /*flex-direction: column;*/
         align-items: center;
         text-align: center;
     }
 
     .quiz_heading {
-        font-size: 45px;
+        font-size: 30px;
+        width: 20rem;
+    }
+
+    .quizR img {
+        /*position: relative;*/
+        /*bottom: 0;*/
+        /*height: available;*/
+        width: 10rem;
     }
 
     .quizBtn a {
@@ -1420,6 +1486,10 @@ html {
 }
 
 @media (max-width: 600px) {
+    .nav-logo img {
+        width: 35%;
+    }
+
     .questionContainer {
         width: 450px;
 
@@ -1576,6 +1646,23 @@ html {
 }
 
 @media (max-width: 480px) {
+    .quizR {
+        flex-direction: column;
+        /*align-items: center;*/
+        /*text-align: center;*/
+    }
+
+    /*.nav-logo {*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*}*/
+    .nav-logo img {
+        margin-top: 1.8rem;
+        height: 5rem;
+        width: 40%;
+    }
+
     .background {
         background: url(../assets/images/MHomeBackground.png);
         height: 82vh;
@@ -1602,12 +1689,22 @@ html {
     .testimonies .max-width {
         top: 60%;
     }
+
     .quiz_heading {
         padding: 2rem 30px;
         margin-bottom: 1rem;
     }
+
     .f_head span {
         display: block;
+    }
+
+    .q_tabInput input {
+        width: 150px;
+        height: 45px;
+        font-size: 30px;
+        text-align: center;
+        font-family: var(--family2);
     }
 
     .solution .max-width {
@@ -1653,7 +1750,7 @@ html {
     }
 
     .nav-logo img {
-        width: 5.5rem;
+        width: 40%;
     }
 
     .navbar .max-width {

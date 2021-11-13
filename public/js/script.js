@@ -34,7 +34,7 @@ let questions = [
         'heading': "What do you struggle with?",
         'subheading': 'Select all that apply',
         'answers': ['Junk Food', 'Emotional Eating (e.g. stress, depression)', 'Sugary Foods',
-            'I enjoy food too much', 'It’s hard to stick to healthy habits', 'Social pressure from friends to drink or eat'],
+            'I enjoy food too much', 'It’s hard to stick to healthy habits', 'Social pressure from friends to drink or eat', 'Nothing'],
         'button': 'NEXT', 'choice': 'multiple', 'attempt': 'yes'
     },
     {
@@ -113,6 +113,15 @@ let questions = [
     },
 ]
 
+function valueChecker() {
+    var val = $('.q_tabInput input').val();
+    if (val.length > 0) {
+        $('.q_next').css({'background': '#34A0A4', 'color': 'white'})
+    } else {
+        $('.q_next').css({'background': 'rgba(190, 200, 200, 0.4)', 'color': 'black'})
+    }
+}
+
 let answers = []
 
 let progressBarState = $('.questionContainer').width() / 10
@@ -142,17 +151,17 @@ function addQuestion(index) {
         <div class="q_sub_heading">${questions[index]['subheading']}</div>
         <div class="q_progressBar"></div>
         <div class="q_answers">
-            <ul>
-            ${questions[index]['answers'].map(
+        ${questions[index]['heading'].includes('Where do you live currently?') ?
+        '<ul id="answers" class="gridView">' :
+        '<ul id="answers">'
+    }
+                ${questions[index]['answers'].map(
         (val, vindex) => {
-            if (questions[index]['answers'].length > 10) {
-                console.log('we reached')
-                $('.q_answers ul').css({'display': 'grid', 'grid-template-columns': '1fr 1fr'})
-            } else {
-                $('.q_answers ul').css({'display': 'block'})
-            }
             if (val === 'input') {
-                return `<li class="q_tabInput"><input type="text"></li>`
+                return `<li class="q_tabInput" onchange="valueChecker()"> <input type="text"></li>`
+            }
+            if (questions[index]['heading'] === 'Where do you live currently?') {
+                return `<li class="q_tab q_tab${++vindex}">${val}</li>`
             }
             return `<li class="q_tab">${val}</li>`
         }
@@ -160,7 +169,7 @@ function addQuestion(index) {
             </ul>
         </div>
         <div class="q_next" id="q_next">${questions[index]['button']}</div>
-    `)
+            `)
 }
 
 let questionNumber = 1
@@ -168,7 +177,8 @@ addQuestion(0)
 singleAns = []
 
 $(document).ready(function () {
-    $('.q_progressBar').css('width', `${progressBarState}px`)
+    $('.q_progressBar').css('width', `${progressBarState}px`
+    )
     $(document).on('click', '.q_tab', function () {
         if (questions[questionNumber - 1].choice === 'single') {
             $('.q_tab').css('background', 'transparent');
@@ -201,11 +211,16 @@ $(document).ready(function () {
 
         } else {
             if (questions[questionNumber - 1].answers.indexOf('input') > -1) {
-                singleAns.push($('.q_tabInput input').val())
-                singleAns.splice(0, singleAns.length)
-                progressBar('+')
-                addQuestion(questionNumber)
-                questionNumber += 1
+                let val = $('.q_tabInput input').val();
+                if (val.length > 0) {
+                    singleAns.push(val)
+                    singleAns.splice(0, singleAns.length)
+                    progressBar('+')
+                    addQuestion(questionNumber)
+                    questionNumber += 1
+                } else {
+                    alert('Please enter Your Age');
+                }
             } else {
                 if (singleAns.length === 0) {
                     alert('Please select a option')
@@ -216,7 +231,9 @@ $(document).ready(function () {
                         addQuestion(questionNumber)
                         questionNumber += 1
                     }
-                    if (questions[questionNumber].attempt === 'yes') {
+                    if (questions.length === questionNumber) {
+                        window.location.href = "/recommend.html";
+
                     }
                 }
             }

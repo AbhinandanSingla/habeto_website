@@ -235,7 +235,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 3fr repeat(10, 1fr);
+        grid-template-rows: 3fr repeat(18, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
@@ -426,13 +426,102 @@
         grid-area: 11 / 4 / 12 / 5;
     }
 
+    .div30 {
+        grid-area: 12 / 1 / 13 / 5;
+    }
+
+    .div31 {
+        grid-area: 13 / 1 / 14/ 2;
+    }
+
+    .div32 {
+        grid-area: 13 / 2 / 14 / 3;
+    }
+
+    .div33 {
+        grid-area: 13 / 3 / 14 / 4;
+    }
+
+    .div34 {
+        background: rgba(196, 196, 196, 0.2);
+        grid-area: 13 / 4 / 14 / 5;
+    }
+
+    .div35 {
+        grid-area: 14 / 1 / 15 / 5;
+    }
+
+    .div36 {
+        grid-area: 15 / 1 / 16 / 2;
+    }
+
+    .div37 {
+        grid-area: 15 / 2 / 16 / 3;
+    }
+
+    .div38 {
+        grid-area: 15 / 3 / 16 / 4;
+    }
+
+    .div39 {
+        background: rgba(196, 196, 196, 0.2);
+        grid-area: 15 / 4 / 16 / 5;
+    }
+
+    .div40 {
+        grid-area: 16 / 1 / 17 / 5;
+    }
+
+    .div41 {
+        grid-area: 17 / 1 / 18 / 2;
+    }
+
+    .div42 {
+        grid-area: 17 / 2 / 18 / 3;
+    }
+
+    .div43 {
+        grid-area: 17 / 3 / 18 / 4;
+    }
+
+    .div44 {
+        background: rgba(196, 196, 196, 0.2);
+        grid-area: 17 / 4 / 18 / 5;
+    }
+
+    .div45 {
+        grid-area: 18 / 1 / 19 / 5;
+    }
+
+    .div46 {
+        grid-area: 19 / 1 / 20 / 2;
+    }
+
+    .div47 {
+        grid-area: 19 / 2 / 20 / 3;
+    }
+
+    .div48 {
+        grid-area: 19 / 3 / 20 / 4;
+    }
+
+    .div49 {
+        background: rgba(196, 196, 196, 0.2);
+        grid-area: 19 / 4 / 20 / 5;
+    }
+
+    .div50 {
+        grid-area: 20 / 1 / 21 / 5;
+
+    }
+
     .plan_heading {
         text-align: center;
         font-family: var(--family2);
         font-style: normal;
         font-weight: 600;
-        font-size: 14px;
-        line-height: 19px;
+        font-size: 26px;
+        line-height: 35px;
     }
 
     .m_plan {
