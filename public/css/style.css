@@ -500,7 +500,7 @@ html {
 .testimonies {
     position: relative;
     width: 100%;
-    height: 100vh;
+    /*height: 100vh;*/
     background: rgba(252, 248, 237, 0.6);
 }
 
@@ -508,10 +508,10 @@ html {
     width: 80%;
     text-align: center;
     color: #F98500;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /*position: absolute;*/
+    /*top: 40%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
     overflow: hidden;
 }
 
@@ -999,7 +999,7 @@ html {
     }
 
     .testimonies {
-        height: 75vh;
+        /*height: 75vh;*/
     }
 
 
@@ -1052,7 +1052,7 @@ html {
     }
 
     .f_register a {
-        padding: 0.5rem 5rem;
+        padding: 0.5rem 6rem;
     }
 
     .f_contact {
@@ -1296,7 +1296,7 @@ html {
     }
 
     .a_lLine {
-        margin: 1rem;
+        margin: 2rem;
     }
 
     .a_last {
@@ -1309,7 +1309,7 @@ html {
         grid-column-gap: 0px;
         grid-row-gap: 50px;
         height: auto;
-        padding: 2rem 3rem;
+        padding: 3rem;
 
     }
 
@@ -1453,7 +1453,7 @@ html {
     }
 
     .testimonies {
-        height: 55vh;
+        /*height: 55vh;*/
     }
 
     .t_topText {
@@ -1667,7 +1667,7 @@ html {
     .background {
         background: url(../assets/images/MHomeBackground.png);
         height: 82vh;
-        background-size: 100% 82vh;
+        background-size: 100% 62vh;
         background-repeat: no-repeat;
         background-position: top;
     }
@@ -1683,6 +1683,7 @@ html {
     }
 
     .quizR img {
+        margin: 1rem 0;
         height: 24rem;
         width: 10rem;
     }
@@ -1711,7 +1712,7 @@ html {
     .solution .max-width {
         height: 55vh;
         align-items: end;
-        margin-top: 8rem;
+        margin-top: 7rem;
     }
 
     .q_heading {
@@ -1785,7 +1786,7 @@ html {
     }
 
     .menu2 .max-width {
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
     }
 
     .Mh_video {
@@ -1907,16 +1908,18 @@ html {
     }
 
     .testimonies {
+        display: flex;
+        justify-content: center;
         /*height: 40vh;*/
         width: 100%;
     }
 
     .t_image img {
-        width: 24rem;
+        width: 30rem;
     }
 
     .t_imageContent {
-        width: 60%;
+        width: 85%;
     }
 
     .footer .max-width img {
