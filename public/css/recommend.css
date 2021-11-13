@@ -155,3 +155,76 @@ body {
 .recontentFree {
     grid-area: 1/2/2/2;
 }
+
+@media (max-width: 480px) {
+    .recontent {
+        display: none;
+    }
+
+    .rcont {
+        font-size: 15px;
+    }
+
+    .rHeading {
+        font-size: 28px;
+    }
+    .rbutton a {
+        padding: 0.5rem 4rem;
+        font-size: 22px;
+    }
+    .mobileRecontent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 3fr) 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding: 2rem 4rem;
+        background: #FFFFFF;
+        border-radius: 0 0 30px 30px;
+
+    }
+
+    .recontent1 {
+        display: none;
+    }
+
+    .MRcontent1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .MRcontent2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .MRcontent3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .rbutton {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .mobileRecontent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding: 2rem 4rem;
+        background: #FFFFFF;
+        border-radius: 0 0 30px 30px;
+
+    }
+
+    .MRcontent1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .MRcontent2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .MRcontent3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+}
