@@ -51,7 +51,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="free">Sign Up</a>
                         <div class="Rprice"><span>₹ 0</span>/ month
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="free">Sign Up</a>
                         <div class="Rprice"><span>₹ 0</span>/ month
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="standard">Sign Up</a>
                         <div class="Rprice"><span>₹ 199</span>/ month
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="standard">Sign Up</a>
                         <div class="Rprice"><span>₹ 199</span>/ month
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="Premium">Sign Up</a>
                         <div class="Rprice"><span>₹ 1999</span>/ month
                         </div>
                     </div>
@@ -267,7 +267,7 @@
                         </ul>
                     </div>
                     <div class="rbutton">
-                        <a href="">Sign Up</a>
+                        <a data-id="Premium">Sign Up</a>
                         <div class="Rprice"><span>₹ 1999</span>/ month
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                         </ul>
                     </div>
                     <div class="rbutton rbutton1">
-                        <a href="">Sign Up</a>
+                        <a data-id="basic">Sign Up</a>
                         <div class="Rprice"><span>₹ 99</span>/ month
                         </div>
                     </div>
@@ -343,7 +343,7 @@
                         </ul>
                     </div>
                     <div class="rbutton rbutton1">
-                        <a href="">Sign Up</a>
+                        <a data-id="basic">Sign Up</a>
                         <div class="Rprice"><span>₹ 99</span>/ month
                         </div>
                     </div>
@@ -393,6 +393,12 @@
         },
         initialSlide: 1
     });
+    $('.rbutton a').click(function () {
+        let plan = $(this).attr('data-id')
+        sessionStorage.setItem('plan', plan)
+        window.location.href = "/?register=true";
+    });
+
 </script>
 </body>
 </html>
