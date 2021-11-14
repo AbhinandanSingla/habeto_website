@@ -46,7 +46,6 @@ async function addUser(id, data) {
     let increment = snap.data()['uCount'] + 1;
     await setDoc(doc(db, 'uCount', 'uCount'), {'uCount': increment});
     sessionStorage.setItem('reg', increment)
-    console.log(increment)
 }
 
 $(document).ready(() => {
@@ -66,7 +65,6 @@ $(document).ready(() => {
                         mobile: mobile,
                         plan: sessionStorage.getItem('plan')
                     }).then(r => {
-                        alert('Registered Successfully');
                         window.location.href = `/sucessPage.html`;
                         $('#registration').css('display', 'none');
                         $('.nav-btn').css('display', 'none');
