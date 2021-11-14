@@ -4,7 +4,17 @@
 }
 
 .nav-logo {
+    padding: 2rem;
     align-items: center;
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 20rem;
 }
 
 .plans .max-width {
