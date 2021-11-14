@@ -20,7 +20,9 @@ body {
     font-size: 30px;
     line-height: 41px;
 }
-
+.mobileRecontent{
+    display: none;
+}
 .recontent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
