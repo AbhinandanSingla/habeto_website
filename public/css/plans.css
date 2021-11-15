@@ -13,9 +13,9 @@
     align-items: center;
 }
 
-.nav-logo img {
-    width: 20rem;
-}
+/*.nav-logo img {*/
+/*    width: 20rem;*/
+/*}*/
 
 .plans .max-width {
     width: 100%;
@@ -606,6 +606,6 @@
     }
 
     .nav {
-        display: none;
+        display: none!important;
     }
 }

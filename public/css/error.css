@@ -160,7 +160,9 @@ html {
         padding-top: 2rem;
     }
 }
+@media (max-width: 480px) {
 
+}
 @media (max-width: 402px) {
     .error .max-width {
         width: 90%;
