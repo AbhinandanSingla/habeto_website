@@ -8,6 +8,25 @@
     <title>NutriMap</title>
 </head>
 <body>
+<section class="registration" id="registration">
+    <div class="overlay"></div>
+    <div class="registerContainer">
+        <div class="r_navbar">
+            <img src="public/assets/images/leftArrow.png" alt="">
+            <div class="r_navText">Registration</div>
+            <div></div>
+        </div>
+        <div class="r_content">
+            <div class="r_name r_input"><span>Name :</span><label for="name"></label><input type="text" id="name"></div>
+            <div class="r_email r_input"><span>Email Id :</span><label for="email"></label><input type="email"
+                                                                                                  id="email"></div>
+            <div class="r_city r_input"><span>City :</span><label for="city"></label><input type="text" id="city"></div>
+            <div class="r_mobile r_input"><span>Mobile :</span><label for="mobile"></label><input type="text"
+                                                                                                  id="mobile"></div>
+        </div>
+        <div class="r_submit"><a id="r_submit">SUBMIT</a></div>
+    </div>
+</section>
 <section class="navbar">
     <div class="max-width">
         <div class="nav-logo">
@@ -41,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="planRates">
-                    <a data-id='free' class="planRatesLink">Sign Up</a>
+                    <a data-id='free' class="planRatesLink" id="freePlan">Sign Up</a>
                     <div class="p_rate">For Free</div>
                 </div>
             </div>
@@ -63,7 +82,7 @@
                     </ul>
                 </div>
                 <div class="planRates">
-                    <a data-id='99' class="planRatesLink">Sign Up</a>
+                    <a data-id='99' class="planRatesLink" id="basicPlan">Sign Up</a>
                     <div class="p_rate p_paid"><span>₹ 99 </span>/ month</div>
                 </div>
             </div>
@@ -92,7 +111,7 @@
                 </div>
                 <div class="planRates">
                     <a data-id='199' class="planRatesLink">Sign Up</a>
-                    <div class="p_rate p_paid " data-id='199'><span>₹ 199 </span>/ month</div>
+                    <div class="p_rate p_paid " id="proPlan" data-id='199'><span>₹ 199 </span>/ month</div>
                 </div>
             </div>
             <div class="plansBox plan4">
@@ -117,35 +136,36 @@
                 </div>
                 <div class="planRates">
                     <a data-id='1999' class="planRatesLink">Sign Up</a>
-                    <div class="p_rate p_paid">From <span>₹ 1999 </span>/ month per person</div>
+                    <div class="p_rate p_paid" id="premiumPlan">From <span>₹ 1999 </span>/ month per person</div>
                 </div>
             </div>
 
         </div>
         <div class="mobilePlanContainer">
             <div class="div1 planCenter " id="free"><img src="public/assets/images/plans/p1.png" alt="">
-                <div class="m_plan">
+                <div class="m_plan" id="mobileFreePlan">
                     <div class="m_heading">Free</div>
                     <div class="m_sub"><span>₹ 99</span></div>
                     <div class="m_last">per month</div>
                 </div>
             </div>
             <div class="div2 planCenter " id="basic"><img src="public/assets/images/plans/p4.png" alt="">
-                <div class="m_plan">
+                <div class="m_plan" id="mobileBasicPlan">
                     <div class="m_heading">Basic</div>
                     <div class="m_sub"><span>₹ 99</span></div>
                     <div class="m_last">per month</div>
                 </div>
             </div>
             <div class="div3 planCenter " id="pro"><img src="public/assets/images/plans/p3.png" alt="">
-                <div class="m_plan">
+                <div class="m_plan" id="mobileProPlan
+">
                     <div class="m_heading">Pro</div>
                     <div class="m_sub"><span>₹ 199</span></div>
                     <div class="m_last">per month</div>
                 </div>
             </div>
             <div class="div4 planCenter " id="premium"><img src="public/assets/images/plans/p2.png" alt="">
-                <div class="m_plan">
+                <div class="m_plan" id="mobilePremiumPlan">
                     <div class="m_heading">Premium</div>
                     <div class="m_sub"><span>₹ 1999</span></div>
                     <div class="m_last">per month</div>
@@ -223,7 +243,7 @@
             <div class="div50 center">
             </div>
             <div class="div51">
-                <div class="mplanButton"><a href="/?register=true">Get This</a></div>
+                <div class="mplanButton"><a>Get This</a></div>
             </div>
         </div>
     </div>
@@ -246,13 +266,24 @@
 <!--    </div>-->
 <!--</section>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="public/js/script.js"></script>
+<script type="module" defer src="server/server.js"></script>
+
+
 <script>
     $('.planRatesLink').click(function () {
         let plan = $(this).data('id')
         sessionStorage.setItem('plan', plan)
-        window.location.href = "/?register=true";
+        // window.location.href = "/?register=true";
+        $('.registration').css({
+            'display': 'block'
+        })
     });
-
+    $('.mplanButton').click(() => {
+        $('.registration').css({
+            'display': 'block'
+        })
+    })
     $('.m_plan:last').css({
         'background': '#34A0A4',
         'box-shadow': '0px 0px 10px rgba(52, 160, 164, 0.7)',
@@ -267,6 +298,7 @@
         color: '#FFFFFF'
     })
 
+    sessionStorage.setItem('plan', 'Premium')
 
     $('.m_plan').click(function () {
         $('.m_plan').css({

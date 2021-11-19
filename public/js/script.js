@@ -1,11 +1,11 @@
 let searchParams = new URLSearchParams(window.location.search)
 $(document).ready(() => {
-    if (searchParams.get('register') === 'true') {
-        $('#registration').css('display', 'block');
-    } else {
-        $('#registration').css('display', 'none');
-
-    }
+    // if (searchParams.get('register') === 'true') {
+    //     $('#registration').css('display', 'block');
+    // } else {
+    //     $('#registration').css('display', 'none');
+    //
+    // }
     $('.r_navbar img').click(() => {
         $('#registration').css('display', 'none');
     });
@@ -208,7 +208,6 @@ $(document).ready(function () {
                 addQuestion(questionNumber)
                 questionNumber += 1
             }
-
         } else {
             if (questions[questionNumber - 1].answers.indexOf('input') > -1) {
                 let val = $('.q_tabInput input').val();

@@ -16,6 +16,25 @@
     <title>NutriMap</title>
 </head>
 <body>
+<section class="registration" id="registration">
+    <div class="overlay"></div>
+    <div class="registerContainer">
+        <div class="r_navbar">
+            <img src="public/assets/images/leftArrow.png" alt="">
+            <div class="r_navText">Registration</div>
+            <div></div>
+        </div>
+        <div class="r_content">
+            <div class="r_name r_input"><span>Name :</span><label for="name"></label><input type="text" id="name"></div>
+            <div class="r_email r_input"><span>Email Id :</span><label for="email"></label><input type="email"
+                                                                                                  id="email"></div>
+            <div class="r_city r_input"><span>City :</span><label for="city"></label><input type="text" id="city"></div>
+            <div class="r_mobile r_input"><span>Mobile :</span><label for="mobile"></label><input type="text"
+                                                                                                  id="mobile"></div>
+        </div>
+        <div class="r_submit"><a id="r_submit">SUBMIT</a></div>
+    </div>
+</section>
 <section class="navbar">
     <div class="max-width">
         <div class="nav-logo">
@@ -38,6 +57,8 @@
                     <div class="rHeading">
                         Free
                     </div>
+                    <div class="recommended" id="free"></div>
+
                 </div>
                 <div class="recontent ">
                     <div class="Rcontent1 recontentFree">
@@ -84,7 +105,7 @@
                     <div class="rHeading">
                         Standard
                     </div>
-                    <div class="recommended">Recommended</div>
+                    <div class="recommended" id="standard"></div>
                 </div>
                 <div class="recontent">
                     <div class="Rcontent1">
@@ -180,7 +201,7 @@
                     <div class="rHeading">
                         Premium
                     </div>
-                    <!--                    <div class="recommended">Recommended</div>-->
+                    <div class="recommended" id="premium"></div>
                 </div>
                 <div class="recontent">
                     <div class="Rcontent1">
@@ -282,7 +303,7 @@
                     <div class="rHeading">
                         Basic
                     </div>
-                    <!--                    <div class="recommended">Recommended</div>-->
+                    <div class="recommended" id="basic"></div>
                 </div>
                 <div class="recontent1 recontent2">
                     <div class="Rcontent12">
@@ -382,7 +403,16 @@
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="public/js/script.js"></script>
+<script type="module" defer src="server/server.js"></script>
 <script>
+    function recommended(val) {
+        $(`#${val}`).text('Recommended').css({
+            'display': 'block'
+        });
+    }
+
+    recommended('premium');
     var swiper = new Swiper(".mySwiper", {
         effect: "cards",
         grabCursor: true,
@@ -398,7 +428,11 @@
     $('.rbutton a').click(function () {
         let plan = $(this).attr('data-id')
         sessionStorage.setItem('plan', plan)
-        window.location.href = "/?register=true";
+        $('.registration').css({
+            'display': 'block'
+        })
+
+        // window.location.href = "/?register=true";
     });
 
 </script>

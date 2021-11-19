@@ -20,9 +20,11 @@ body {
     font-size: 30px;
     line-height: 41px;
 }
-.mobileRecontent{
+
+.mobileRecontent {
     display: none;
 }
+
 .recontent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -95,11 +97,14 @@ body {
 }
 
 .recommended {
+    display: none;
     background: #F98500;
     padding: 0.5rem 3rem;
     color: #ffffff;
     margin: 0 0 -3rem 0;
     z-index: 66;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .recommendBox {
@@ -170,10 +175,12 @@ body {
     .rHeading {
         font-size: 28px;
     }
+
     .rbutton a {
         padding: 0.5rem 4rem;
         font-size: 22px;
     }
+
     .mobileRecontent {
         display: grid;
         grid-template-columns: 1fr;
