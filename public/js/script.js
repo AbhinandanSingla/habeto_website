@@ -158,7 +158,7 @@ function addQuestion(index) {
                 ${questions[index]['answers'].map(
         (val, vindex) => {
             if (val === 'input') {
-                return `<li class="q_tabInput" oninput="valueChecker()"> <input type="text"></li>`
+                return `<li class="q_tabInput" oninput=" valueChecker()"> <input type="text"></li>`
             }
             if (questions[index]['heading'] === 'Where do you live currently?') {
                 return `<li class="q_tab q_tab${++vindex}">${val}</li>`

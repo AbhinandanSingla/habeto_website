@@ -137,7 +137,7 @@ html {
 }
 
 .h_video img {
-    width: 280px;
+    width: 55rem;
 }
 
 .h_main_heading {
@@ -953,6 +953,12 @@ html {
     display: none
 }
 
+@media (max-width: 1200px) {
+    .h_video img {
+        width: 48rem;
+    }
+}
+
 @media (max-width: 1024px) {
 
     .nav-logo {
@@ -1122,6 +1128,9 @@ html {
 }
 
 @media (max-width: 900px) {
+    .h_video img{
+        width: 39rem;
+    }
     .h_main_heading {
         font-size: 32px;
         line-height: 50px;
