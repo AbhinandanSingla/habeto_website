@@ -588,7 +588,7 @@
     .mplanButton a {
         display: inline-flex;
         flex-direction: column;
-        padding: 4rem 14rem;
+        padding: 2.5rem 10rem;
         background: #34A0A4;
         border: 2px solid #34A0A4;
         box-sizing: border-box;
@@ -607,5 +607,85 @@
 
     .nav {
         display: none!important;
+    }
+}
+
+@media (max-width: 900px) {
+    .m_plan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        height: 13rem;
+        width: 13rem;
+        background: #EDFCFC;
+        border: 4px solid #34A0A4;
+        box-sizing: border-box;
+        border-radius: 30px;
+    }
+    .planCenter img{
+        width: 10rem;
+        height: 10rem;
+    }
+    .mplanButton a {
+        display: inline-flex;
+        flex-direction: column;
+        padding: 2.5rem 10rem;
+        background: #34A0A4;
+        border: 2px solid #34A0A4;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 10px 2px rgba(52 160 164 0.8);
+        border-radius: 50px;
+        color: white;
+        font-family: var(--family3);
+        text-align: center;
+        margin: 5rem 0;
+        transition: all 200ms ease-in-out;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .m_plan {
+        height: 9rem;
+        width: 9rem;
+    }
+    .mplanButton a {
+        padding: 1rem 6rem;
+        margin: 1rem 0;
+        font-size: 20px;
+    }
+    .m_sub {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .m_last {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .div51 {
+        width: 100%;
+    }
+    .m_heading {
+        font-size: 13px;
+        line-height: 26px;
+    }
+    .plans .max-width {
+        padding: 0rem 0rem;
+    }
+    .plan_heading {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .plan_main_heading {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .planCenter img {
+        width: 6rem;
+        height: 6rem;
     }
 }

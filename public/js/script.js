@@ -204,6 +204,7 @@ $(document).ready(function () {
         if (questions[questionNumber - 1].attempt === 'yes') {
             if (questionNumber < questions.length) {
                 singleAns.splice(0, singleAns.length)
+                answers.push({questionNumber:questions[questionNumber].heading});
                 progressBar('+')
                 addQuestion(questionNumber)
                 questionNumber += 1
@@ -215,6 +216,7 @@ $(document).ready(function () {
                     singleAns.push(val)
                     singleAns.splice(0, singleAns.length)
                     progressBar('+')
+                    answers.push({questionNumber:questions[questionNumber].heading});
                     addQuestion(questionNumber)
                     questionNumber += 1
                 } else {
@@ -227,6 +229,7 @@ $(document).ready(function () {
                     if (questionNumber < questions.length) {
                         singleAns.splice(0, singleAns.length)
                         progressBar('+')
+                        answers.push({questionNumber:questions[questionNumber].heading});
                         addQuestion(questionNumber)
                         questionNumber += 1
                     }
